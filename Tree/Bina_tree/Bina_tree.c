@@ -4,7 +4,7 @@
  * author  Peterhaiker 
  * email   <vim.memory@gmail.com>
  *
- * description:
+ * description:The main function to call all binary tree function
  */
 
 #include "stdio.h"
@@ -39,6 +39,10 @@ int main(int argc,char*argv[])
   putchar('\n');
 
   printf("Inorder:");
+  Inorder(tree);
+  putchar('\n');
+
+  printf("Postorder:");
   Inorder(tree);
   putchar('\n');
   return 0;

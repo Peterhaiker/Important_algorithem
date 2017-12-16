@@ -4,7 +4,7 @@
  * author  Peterhaiker 
  * email   <vim.memory@gmail.com>
  *
- * description:
+ * description:The recusive version of preorder
  */
 
 #include "stdio.h"
