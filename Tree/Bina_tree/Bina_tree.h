@@ -22,4 +22,5 @@ typedef struct Bina_tree{
 
 Bina_tree *Creat_bina_tree(int*,size_t);
 void Preorder(Bina_tree*);
+void Inorder(Bina_tree*);
 #endif /* !BINA_TREE_H */

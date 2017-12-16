@@ -32,9 +32,14 @@ int main(int argc,char*argv[])
     puts("create failed");
     return 0;
   }
+  free(node_info);
+
   printf("Preorder:");
   Preorder(tree);
-  free(node_info);
+  putchar('\n');
+
+  printf("Inorder:");
+  Inorder(tree);
   putchar('\n');
   return 0;
 }
