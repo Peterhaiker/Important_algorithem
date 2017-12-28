@@ -24,7 +24,7 @@ void Inorder_nonrecusive(Bina_tree*tree)
   printf("Inorder_nonrecusive:");
   while(p||-1!=tree_stack_index){
     //viist new node
-    if(p){
+    while(p){
       //expand stack size
       if(tree_stack_index+1==STACK_SIZE){
         STACK_SIZE<<=1;
@@ -36,16 +36,14 @@ void Inorder_nonrecusive(Bina_tree*tree)
       p=p->left;
     }
     //back
-    else{
-      p=&tree_stack[tree_stack_index].stack;
-      while(tree_stack[tree_stack_index].r_visited&&tree_stack_index!=0)
-        p=&tree_stack[--tree_stack_index].stack;
-      if(tree_stack[tree_stack_index].r_visited&&0==tree_stack_index)
-        break;
-      printf("%d ",p->date);
-      tree_stack[tree_stack_index].r_visited=1;
-      p=p->right;
-    }
+    p=&tree_stack[tree_stack_index].stack;
+    while(tree_stack[tree_stack_index].r_visited&&tree_stack_index!=0)
+      p=&tree_stack[--tree_stack_index].stack;
+    if(tree_stack[tree_stack_index].r_visited&&0==tree_stack_index)
+      break;
+    printf("%d ",p->date);
+    tree_stack[tree_stack_index].r_visited=1;
+    p=p->right;
   }
   return;
 }

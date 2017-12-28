@@ -24,7 +24,7 @@ void Preorder_nonrecusive(Bina_tree*tree)
   Bina_tree*p=tree;
   printf("Preorder_nonrecusive:");
   while(p||-1!=tree_stack_index){
-    if(p){
+    while(p){
       printf("%d ",p->date);
       //full stack
       if(tree_stack_index==STACK_SIZE-1){
@@ -36,15 +36,13 @@ void Preorder_nonrecusive(Bina_tree*tree)
       tree_stack[tree_stack_index].l_visited=1;
       p=p->left;
     }
-    else{
-      p=&tree_stack[tree_stack_index].stack;
-      while(tree_stack[tree_stack_index].r_visited&&0!=tree_stack_index)
-          p=&tree_stack[--tree_stack_index].stack;
-      if(tree_stack[tree_stack_index].r_visited&&0==tree_stack_index)
-          break;
-      tree_stack[tree_stack_index].r_visited=1;
-      p=p->right;
-    }
+    p=&tree_stack[tree_stack_index].stack;
+    while(tree_stack[tree_stack_index].r_visited&&0!=tree_stack_index)
+        p=&tree_stack[--tree_stack_index].stack;
+    if(tree_stack[tree_stack_index].r_visited&&0==tree_stack_index)
+        break;
+    tree_stack[tree_stack_index].r_visited=1;
+    p=p->right;
   }
   free(tree_stack);
   return;

@@ -22,7 +22,7 @@ void Postorder_nonrecusive(Bina_tree*tree)
 
   printf("Postorder_nonrecusive:");
   while(p||-1!=tree_stack_index){
-    if(p){
+    while(p){
       //stack overflow
       if(tree_stack_index+1==STACK_SIZE){
         STACK_SIZE<<=1;
@@ -34,19 +34,17 @@ void Postorder_nonrecusive(Bina_tree*tree)
       tree_stack[tree_stack_index].r_visited=0;
       p=p->left;
     }
-    else{
-      p=&tree_stack[tree_stack_index].stack;
-      while(tree_stack[tree_stack_index].r_visited&&0!=tree_stack_index){
-        printf("%d ",p->date);
-        p=&tree_stack[--tree_stack_index].stack;
-      }
-      if(tree_stack[tree_stack_index].r_visited&&0==tree_stack_index){
-        printf("%d ",p->date);
-        break;
-      }
-      p=p->right;
-      tree_stack[tree_stack_index].r_visited=1;
+    p=&tree_stack[tree_stack_index].stack;
+    while(tree_stack[tree_stack_index].r_visited&&0!=tree_stack_index){
+      printf("%d ",p->date);
+      p=&tree_stack[--tree_stack_index].stack;
     }
+    if(tree_stack[tree_stack_index].r_visited&&0==tree_stack_index){
+      printf("%d ",p->date);
+      break;
+    }
+    p=p->right;
+    tree_stack[tree_stack_index].r_visited=1;
   }
   free(tree_stack);
   return;
