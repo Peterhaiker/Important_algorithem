@@ -10,11 +10,11 @@
 #include "stdio.h"
 #include"Bina_tree.h"
 
-void Postorder(Bina_tree*tree)
+void Postorder_recusive(Bina_tree*tree)
 {
   if(tree==NULL)
     return;
-  Postorder(tree->left);
-  Postorder(tree->right);
+  Postorder_recusive(tree->left);
+  Postorder_recusive(tree->right);
   printf("%d ",tree->date);
 }

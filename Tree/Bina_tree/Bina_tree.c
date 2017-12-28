@@ -34,16 +34,20 @@ int main(int argc,char*argv[])
   }
   free(node_info);
 
+  Preorder_nonrecusive(tree);
+  putchar('\n');
+
   printf("Preorder:");
-  Preorder(tree);
+  Preorder_recusive(tree);
   putchar('\n');
 
   printf("Inorder:");
-  Inorder(tree);
+  Inorder_recusive(tree);
   putchar('\n');
 
   printf("Postorder:");
-  Inorder(tree);
+  Postorder_recusive(tree);
   putchar('\n');
+
   return 0;
 }

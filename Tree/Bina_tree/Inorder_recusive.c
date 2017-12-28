@@ -1,5 +1,5 @@
 /*
- * Inorder.c
+ * Inorder_recusive.c
  * Copyright (C) 2017-12-16 22:31 
  * author  Peterhaiker 
  * email   <vim.memory@gmail.com>
@@ -10,11 +10,11 @@
 #include "stdio.h"
 #include "Bina_tree.h"
 
-void Inorder(Bina_tree*tree)
+void Inorder_recusive(Bina_tree*tree)
 {
   if(NULL == tree)
     return;
-  Inorder(tree->left);
+  Inorder_recusive(tree->left);
   printf("%d ",tree->date);
-  Inorder(tree->right);
+  Inorder_recusive(tree->right);
 }

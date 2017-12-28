@@ -21,6 +21,11 @@ typedef struct Bina_tree{
 }Bina_tree;
 
 Bina_tree *Creat_bina_tree(int*,size_t);
-void Preorder(Bina_tree*);
-void Inorder(Bina_tree*);
+void Preorder_recusive(Bina_tree*);
+void Inorder_recusive(Bina_tree*);
+void Postorder_recusive(Bina_tree*);
+
+void Preorder_nonrecusive(Bina_tree*);
+void Inorder_nonrecusive(Bina_tree*);
+void Postorder_nonrecusive(Bina_tree*);
 #endif /* !BINA_TREE_H */

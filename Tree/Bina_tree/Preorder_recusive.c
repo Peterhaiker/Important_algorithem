@@ -10,11 +10,11 @@
 #include "stdio.h"
 #include "Bina_tree.h"
 
-void Preorder(Bina_tree*tree)
+void Preorder_recusive(Bina_tree*tree)
 {
   if(NULL == tree)
     return;
   printf("%d ",tree->date);
-  Preorder(tree->left);
-  Preorder(tree->right);
+  Preorder_recusive(tree->left);
+  Preorder_recusive(tree->right);
 }
