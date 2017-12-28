@@ -44,4 +44,6 @@ void Postorder_nonrecusive(Bina_tree*);
 void levelorder(Bina_tree*,int num);
 //search a value
 void Binary_search(Bina_tree*);
+//leaf sum
+void total_leaf(Bina_tree*);
 #endif /* !BINA_TREE_H */
