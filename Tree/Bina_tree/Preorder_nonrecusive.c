@@ -26,12 +26,13 @@ void Preorder_nonrecusive(Bina_tree*tree)
   while(p||-1!=tree_stack_index){
     if(p){
       printf("%d ",p->date);
+      //full stack
       if(tree_stack_index==STACK_SIZE-1){
         STACK_SIZE<<=1;//STACK_SIZE*2
         tree_stack=realloc(tree_stack,STACK_SIZE*sizeof(stack));
       }
       tree_stack[++tree_stack_index].stack=*p;
-      //full stack
+      tree_stack[tree_stack_index].r_visited=0;
       tree_stack[tree_stack_index].l_visited=1;
       p=p->left;
     }

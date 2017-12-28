@@ -31,6 +31,7 @@ void Inorder_nonrecusive(Bina_tree*tree)
         tree_stack=realloc(tree_stack,STACK_SIZE*sizeof(stack));
       }
       tree_stack[++tree_stack_index].stack=*p;
+      tree_stack[tree_stack_index].r_visited=0;
       tree_stack[tree_stack_index].l_visited=1;
       p=p->left;
     }
