@@ -13,13 +13,6 @@
 #include<assert.h>
 #include<stdbool.h>
 
-int STACK_SIZE=10;
-typedef struct{
-  Bina_tree stack;
-  bool l_visited;
-  bool r_visited;
-}stack;
-
 void Preorder_nonrecusive(Bina_tree*tree)
 {
   //if tree==NULL,then quit
@@ -35,7 +28,7 @@ void Preorder_nonrecusive(Bina_tree*tree)
       printf("%d ",p->date);
       if(tree_stack_index==STACK_SIZE-1){
         STACK_SIZE<<=1;//STACK_SIZE*2
-        tree_stack=realloc(tree_stack,STACK_SIZE);
+        tree_stack=realloc(tree_stack,STACK_SIZE*sizeof(stack));
       }
       tree_stack[++tree_stack_index].stack=*p;
       //full stack
@@ -44,14 +37,10 @@ void Preorder_nonrecusive(Bina_tree*tree)
     }
     else{
       p=&tree_stack[tree_stack_index].stack;
-      while(tree_stack[tree_stack_index].r_visited){
-        if(0==tree_stack_index)
-          break;
-        else
+      while(tree_stack[tree_stack_index].r_visited&&0!=tree_stack_index)
           p=&tree_stack[--tree_stack_index].stack;
-      }
-      if(0==tree_stack_index&&tree_stack[tree_stack_index].r_visited==1)
-        break;
+      if(tree_stack[tree_stack_index].r_visited&&0==tree_stack_index)
+          break;
       tree_stack[tree_stack_index].r_visited=1;
       p=p->right;
     }

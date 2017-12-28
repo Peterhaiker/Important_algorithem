@@ -10,8 +10,11 @@
 #ifndef BINA_TREE_H
 #define BINA_TREE_H
 
+static int STACK_SIZE=10;//for nonrecusive traverse
+
 #include<stdbool.h>
 
+//Binary tree structure
 typedef struct Bina_tree{
   int date;
   struct Bina_tree*left;
@@ -19,6 +22,13 @@ typedef struct Bina_tree{
   struct Bina_tree*right;
   bool r_ignore;
 }Bina_tree;
+
+//structure for nonrecusive traverse tree
+typedef struct{
+  Bina_tree stack;
+  bool l_visited;
+  bool r_visited;
+}stack;
 
 Bina_tree *Creat_bina_tree(int*,size_t);
 void Preorder_recusive(Bina_tree*);

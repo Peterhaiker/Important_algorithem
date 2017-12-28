@@ -37,6 +37,9 @@ int main(int argc,char*argv[])
   Preorder_nonrecusive(tree);
   putchar('\n');
 
+  Inorder_nonrecusive(tree);
+  putchar('\n');
+
   printf("Preorder:");
   Preorder_recusive(tree);
   putchar('\n');
