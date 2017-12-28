@@ -30,7 +30,9 @@ typedef struct{
   bool r_visited;
 }stack;
 
+//create a binary tree
 Bina_tree *Creat_bina_tree(int*,size_t);
+//travese binary tree
 void Preorder_recusive(Bina_tree*);
 void Inorder_recusive(Bina_tree*);
 void Postorder_recusive(Bina_tree*);
@@ -40,4 +42,6 @@ void Inorder_nonrecusive(Bina_tree*);
 void Postorder_nonrecusive(Bina_tree*);
 
 void levelorder(Bina_tree*,int num);
+//search a value
+void Binary_search(Bina_tree*);
 #endif /* !BINA_TREE_H */
