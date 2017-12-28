@@ -8,7 +8,7 @@
  */
 
 #include "stdio.h"
-#include "Bina_tree.h"
+#include "../Bina_tree.h"
 
 void Inorder_recusive(Bina_tree*tree)
 {

@@ -7,8 +7,8 @@
  * description:The main function to call all binary tree function
  */
 
-#include "stdio.h"
-#include "Bina_tree.h"
+#include<stdio.h>
+#include"../Bina_tree.h"
 #include<stdlib.h>
 
 int main(int argc,char*argv[])

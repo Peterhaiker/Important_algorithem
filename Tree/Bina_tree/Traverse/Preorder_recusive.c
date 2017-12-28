@@ -7,8 +7,8 @@
  * description:The recusive version of preorder
  */
 
-#include "stdio.h"
-#include "Bina_tree.h"
+#include<stdio.h>
+#include "../Bina_tree.h"
 
 void Preorder_recusive(Bina_tree*tree)
 {
