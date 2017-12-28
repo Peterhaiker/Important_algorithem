@@ -38,4 +38,6 @@ void Postorder_recusive(Bina_tree*);
 void Preorder_nonrecusive(Bina_tree*);
 void Inorder_nonrecusive(Bina_tree*);
 void Postorder_nonrecusive(Bina_tree*);
+
+void levelorder(Bina_tree*,int num);
 #endif /* !BINA_TREE_H */

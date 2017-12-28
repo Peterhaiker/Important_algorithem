@@ -54,5 +54,8 @@ int main(int argc,char*argv[])
   Postorder_recusive(tree);
   putchar('\n');
 
+  levelorder(tree,i);
+  putchar('\n');
+
   return 0;
 }
