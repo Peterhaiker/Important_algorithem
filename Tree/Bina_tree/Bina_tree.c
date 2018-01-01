@@ -37,7 +37,7 @@ int main(int argc,char*argv[])
   puts("1:Preorder_nonrecusive   2:Inorder_nonrecusive  3:Postorder_nonrecusive");
   puts("4:Preorder_recusive      5:Inorder_recusive     6:Postorder_recusive");
   puts("7:levelorder             8:Binary_search        9:total_leaf");
-  puts("10:quit");
+  puts("10:create huffman        10:quit");
   int choice;
   char str[3]={'\0'};
   while(1){
@@ -55,7 +55,8 @@ int main(int argc,char*argv[])
       case 7:printf("levelorder");levelorder(tree,i);putchar('\n');break;
       case 8:Binary_search(tree);putchar('\n');break;
       case 9:total_leaf(tree);putchar('\n');break;
-      case 10:puts("bye");return 0;
+      case 10:Create_huffman(node_info,i);putchar('\n');break;
+      case 11:puts("bye");return 0;
       default:puts("invalid value");
     }
   }
