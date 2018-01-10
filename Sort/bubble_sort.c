@@ -9,9 +9,11 @@
 
 #include <stdio.h>
 #include<stdlib.h>
+#include<stdbool.h>
 #include<assert.h>
 #include"sort.h"
 
+bool unchanged=1;
 void bubble_sort(int array[],size_t num)
 {
   //if array is null,exit
@@ -30,8 +32,12 @@ void bubble_sort(int array[],size_t num)
           max=arr_cpy[j];
           arr_cpy[j]=arr_cpy[j+1];
           arr_cpy[j+1]=max;
+          unchanged=0;
       }
     }
+    if(unchanged)
+      break;
+    unchanged=1;
   }
   
   //output
