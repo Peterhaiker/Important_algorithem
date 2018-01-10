@@ -8,18 +8,25 @@
  */
 
 #include <stdio.h>
+#include<ctype.h>
 #include<stdlib.h>
 #include<stdbool.h>
 #include<assert.h>
 #include"sort.h"
 
 bool unchanged=1;
-void bubble_sort(int array[],size_t num,bool increase)
+void bubble_sort(int array[],size_t num)
 {
   //if array is null,exit
   assert(array);
   //bubble sort begin
-  if(increase){
+  printf("increase sort?(y/n):_\b");
+  char increase;
+  while(1!=scanf("%[yYnN]",&increase))
+    printf("invalid input.try again:_\b");
+  while('\n'!=getchar())
+    ;
+  if('y'==tolower(increase)){
     int max=0;
     for(int i=0;i<num;++i){
       for(int j=0;j<num-i-1;j++){
