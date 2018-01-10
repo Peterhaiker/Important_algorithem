@@ -17,8 +17,10 @@ void insert_sort(int array[],size_t num)
 
   char increase;
   printf("increase sort?(y/n):_\b");
-  while(1!=scanf("%[yYnN]",&increase))
+  while(1!=scanf("%[yYnN]",&increase)){
+    while('\n'!=getchar());
     printf("invalid input.try again:_\b");
+  }
   while('\n'!=getchar())
     ;
   if('y'==tolower(increase)){
@@ -52,5 +54,6 @@ void insert_sort(int array[],size_t num)
   printf("insert sort:");
   for(int i=0;i<num;++i)
     printf("%d ",array[i]);
+  putchar('\n');
   return;
 }

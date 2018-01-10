@@ -22,8 +22,10 @@ void bubble_sort(int array[],size_t num)
   //bubble sort begin
   printf("increase sort?(y/n):_\b");
   char increase;
-  while(1!=scanf("%[yYnN]",&increase))
+  while(1!=scanf("%[yYnN]",&increase)){
+    while('\n'!=getchar());
     printf("invalid input.try again:_\b");
+  }
   while('\n'!=getchar())
     ;
   if('y'==tolower(increase)){
