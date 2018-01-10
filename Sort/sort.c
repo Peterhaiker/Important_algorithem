@@ -24,6 +24,10 @@ int main(int argc,char*argv[])
           arr=realloc(arr,ARR_SIZE*sizeof(int));
       }
   }
-  bubble_sort(arr,input_num);
+  printf("increase sort?(y/n):");
+  if('y'==getchar())
+    bubble_sort(arr,input_num,1);
+  else
+    bubble_sort(arr,input_num,0);
   return 0;
 }

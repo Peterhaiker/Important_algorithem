@@ -14,36 +14,48 @@
 #include"sort.h"
 
 bool unchanged=1;
-void bubble_sort(int array[],size_t num)
+void bubble_sort(int array[],size_t num,bool increase)
 {
   //if array is null,exit
   assert(array);
-
-  int max;
-  //backup the array
-  int*arr_cpy=calloc(num,sizeof(int));
-  for(int i=0;i<num;++i)
-      arr_cpy[i]=array[i];
-
   //bubble sort begin
-  for(int i=0;i<num;++i){
-    for(int j=0;j<num-i-1;j++){
-      if(arr_cpy[j]>arr_cpy[j+1]){
-          max=arr_cpy[j];
-          arr_cpy[j]=arr_cpy[j+1];
-          arr_cpy[j+1]=max;
+  if(increase){
+    int max=0;
+    for(int i=0;i<num;++i){
+      for(int j=0;j<num-i-1;j++){
+        if(array[j]>array[j+1]){
+          max=array[j];
+          array[j]=array[j+1];
+          array[j+1]=max;
           unchanged=0;
+        }
       }
+      if(unchanged)
+        break;
+      unchanged=1;
     }
-    if(unchanged)
-      break;
-    unchanged=1;
   }
-  
+  else{
+    int min=0;
+    for(int i=0;i<num;++i){
+      for(int j=0;j<num-i-1;j++){
+        if(array[j]<array[j+1]){
+          min=array[j];
+          array[j]=array[j+1];
+          array[j+1]=min;
+          unchanged=0;
+        }
+      }
+      if(unchanged)
+        break;
+      unchanged=1;
+    }
+  }
+
   //output
   printf("bubble sort:");
   for(int i=0;i<num;++i)
-    printf("%d ",arr_cpy[i]);
+    printf("%d ",array[i]);
   putchar('\n');
   return;
 }

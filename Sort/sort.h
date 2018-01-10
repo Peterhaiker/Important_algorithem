@@ -10,8 +10,10 @@
 #ifndef SORT_H
 #define SORT_H
 
+#include<stdbool.h>
+
 static int ARR_SIZE=10;
 //the type number represent the sort of string,int or double etc
-void bubble_sort(int array[],size_t num);
+void bubble_sort(int array[],size_t num,bool increase);
 
 #endif /* !SORT_H */
