@@ -12,6 +12,6 @@
 
 static int ARR_SIZE=10;
 //the type number represent the sort of string,int or double etc
-void bubble_sort(void*array[],size_t num);
+void bubble_sort(int array[],size_t num);
 
 #endif /* !SORT_H */
