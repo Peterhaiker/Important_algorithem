@@ -14,6 +14,7 @@
 
 int main(int argc,char*argv[])
 {
+  system("reset");
   puts("please input all node date by level(^D to quit):");
   size_t node_num=20;
   int*node_info=malloc(sizeof(int)*node_num);
@@ -34,17 +35,22 @@ int main(int argc,char*argv[])
   }
   free(node_info);
 
+  puts("***********************************menu**********************************");
+  puts("a:Preorder_nonrecusive   b:Inorder_nonrecusive  c:Postorder_nonrecusive");
+  puts("d:Preorder_recusive      e:Inorder_recusive     f:Postorder_recusive");
+  puts("g:levelorder             h:Binary_search        i:total_leaf");
+  puts("j:create huffman         k:quit");
+
   while(1){
-    puts("***********************************menu**********************************");
-    puts("a:Preorder_nonrecusive   b:Inorder_nonrecusive  c:Postorder_nonrecusive");
-    puts("d:Preorder_recusive      e:Inorder_recusive     f:Postorder_recusive");
-    puts("g:levelorder             h:Binary_search        i:total_leaf");
-    puts("j:create huffman         k:quit");
     //get input from stdin
     char choice;
     printf("Please choice:_\b");
-    while(!isalpha(choice=getchar()))
+    while(!isalpha(choice=getchar())){
+      while('\n'!=getchar())
+        ;
       printf("invalied input.choice again:_\b");
+    }
+
     //drop all useless input in inputstring
     while('\n'!=getchar())
       ;

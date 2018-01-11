@@ -25,8 +25,13 @@ void Binary_search(Bina_tree*tree)
 
   printf("please input a value you want to search:_\b");
   int num=-1;
-  while(1!=scanf("%d",&num))
+  while(1!=scanf("%d",&num)){
+    while('\n'!=getchar())
+      ;
     printf("try again:_\b");
+  }
+  while('\n'!=getchar())
+    ;
 
   while(p||-1!=tree_stack_index){
     while(p){

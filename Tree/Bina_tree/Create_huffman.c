@@ -25,7 +25,7 @@ void Create_huffman(int*buff,size_t num)
   assert(buff);
 
   //sort the array by dichotomy
-  bubble_sort(buff,num,1);
+  bubble_sort(buff,num);
   //create a sorted list
   struct sorted_list*list_prev,*list_next;
   sorted_list=list_prev=list_next=calloc(1,sizeof(struct sorted_list));
